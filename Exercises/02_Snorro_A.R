@@ -6,10 +6,16 @@ library(shiny)
 library(png)
 
 ui <- fluidPage(
-  sliderInput('scale','Scale:',min=0,max=1,value=0.5,step=0.01),
-  sliderInput('x','x:',min=-1,max=1,value=0,step=0.01),
-  sliderInput('y','y:',min=-1,max=1,value=0,step=0.01),
-  plotOutput('myplot',width = 500,height=500)
+  fluidRow(
+    column(width=4,
+           sliderInput('scale','Scale:',min=0,max=1,value=0.5,step=0.01),
+           sliderInput('x','x:',min=-1,max=1,value=0,step=0.01),
+           sliderInput('y','y:',min=-1,max=1,value=0,step=0.01)
+    ),
+    column(width=8,
+           plotOutput('myplot',width = 500,height=500)
+    )
+  )
 )
 
 # The server function

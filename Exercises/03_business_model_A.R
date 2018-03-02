@@ -10,24 +10,22 @@ library(shiny)
 df = read.table('http://www.rossmanchance.com/iscam2/data/housing.txt',sep='\t',header=T)
 
 ui <- fluidPage(
-  # Add an input to select a column here
-  selectizeInput('value','Values: ', choices = NULL, multiple =T), # Initialize with choices = NULL
+  selectInput('column','Column: ', choices = c('City','bedrooms','baths')),
+  selectizeInput('value','Values: ', choices = NULL, multiple =T),
   tableOutput('table1')
 )
 
 # The server function
 server <- function(input,output, session) 
 {
-  # Observer to update the choices of the input 'value' whenever the input$column changes
-  observeEvent(..., 
+  observeEvent(input$column, 
                {
-                 updateSelectizeInput(session,inputId='...',choices=...))
+                 updateSelectizeInput(session,inputId='value',choices=unique(df[[input$column]]))
                })
   
   output$table1 <- renderTable({
-
-          # If input$value is not null, filter the table
-      
+    if(!is.null(input$value))
+      df = df[ df[[input$column]] %in% input$value,]
     return(df)
   })
 }

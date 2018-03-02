@@ -6,10 +6,16 @@ library(shiny)
 library(png)
 
 ui <- fluidPage(
-  # Add a slider for the scale, between 0 and 1.
-  # Add a slider for the x displacement, between 0 and 1.
-  # Add a slider for the y displacement, between 0 and 1.
-  plotOutput('myplot',width = 500,height=500)
+  fluidRow(
+    column(width=4
+           # Add a slider for the scale, between 0 and 1.
+           # Add a slider for the x displacement, between 0 and 1.
+           # Add a slider for the y displacement, between 0 and 1.
+    ),
+    column(width=8,
+           plotOutput('myplot',width = 500,height=500)
+    )
+  )
 )
 
 # The server function

@@ -9,7 +9,10 @@ ui <- fluidPage(
   selectInput('mode', 'Mode: ', choices = c('Friendly','Hostile')),
   textInput('name', 'Your name: '),
   textInput('greeting', 'Your greeting: '),
-  actionButton('interact', 'Interact!')
+  actionButton('interact', 'Interact!'),
+  hr(),
+  img(src='zoologist.jpg')
+  
 )
 
 # The server function

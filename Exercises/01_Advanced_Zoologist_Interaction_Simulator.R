@@ -10,6 +10,8 @@ ui <- fluidPage(
   # Create an input where the user can enter his or her name. (textInput)
   # Create an input where the user can enter the greeting to AZIS. (textInput)
   # Add an actionButton to start the interaction simulator.
+  hr(),
+  img(src='zoologist.jpg')
 )
 
 # The server function
