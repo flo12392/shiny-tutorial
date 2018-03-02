@@ -1,4 +1,4 @@
-# Oh no! Freek has lost his moustache. run the ap to see where it has end up.
+# Oh no! Freek has lost his moustache. run the app to see where it has end up.
 # We need to build an app that puts the moustache back in the correct place.
 # For this to work, you require the png package first.
 
