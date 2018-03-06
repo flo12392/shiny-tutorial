@@ -17,7 +17,7 @@ ui <- fluidPage(
 # The server function
 server <- function(input,output) 
 {
-  observeEvent(NULL, # When should this observer fire?
+  ( # Create a reactive/observe/observeEvent/reactiveVal to listen to input and fire the code chunk below.
                {
                  # text1 should be 'x: y', where x is the users name, and y is the greeting.
                  # text2 should be 'AZIS: Hello' when AZIS is friendly.

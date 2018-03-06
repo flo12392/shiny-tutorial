@@ -2,18 +2,21 @@ dashboardPage(
   dashboardHeader(title='Shiny demo'),
   dashboardSidebar(
     sidebarMenu(id='sidebar',
-                div(style='display:block;margin-left: auto;margin-right: auto;',
+                hr(style='margin-top:7px;margin-bottom:7px;border-top: 3px solid #000000;'),
+                div(style='display:block;margin-left: 30px;margin-right: auto;',
                     div(style="display:inline-block",actionButton('btn_prev','Prev')),
                     div(style="display:inline-block",actionButton('btn_next','Next'))
                 ),
-                menuItem('App components', tabName = 'panel1', icon = icon('chart')),
-                menuItem('UI Components', tabName = 'panel2', icon = icon('chart')),
-                menuItem('Server Components', tabName = 'panel3', icon = icon('chart')),
-                menuItem('An example', tabName = 'panel4', icon = icon('chart')),
-                menuItem('Reactive conductors', tabName = 'panel5', icon = icon('chart')),
-                menuItem('Isolate', tabName = 'panel6', icon = icon('chart')),
-                menuItem('observeEvent & reactiveVal', tabName = 'panel7', icon = icon('chart'))
-                
+                hr(style='margin-top:7px;margin-bottom:0px;border-top: 3px solid #000000;'),
+                menuItem('Showcase',tabName='panel0',icon=icon('star-o')),
+                menuItem('App components', tabName = 'panel1', icon = icon('cube')),
+                menuItem('UI Components', tabName = 'panel2', icon = icon('cube')),
+                menuItem('Server Components', tabName = 'panel3', icon = icon('cube')),
+                menuItem('An example', tabName = 'panel4', icon = icon('lightbulb-o')),
+                menuItem('Reactive conductors', tabName = 'panel5', icon = icon('random')),
+                menuItem('Isolate', tabName = 'panel6', icon = icon('genderless')),
+                menuItem('observeEvent & reactiveVal', tabName = 'panel7', icon = icon('external-link')),
+                menuItem('Further resources', tabName = 'panel8', icon = icon('archive'))
     )
     
   ),
@@ -22,7 +25,14 @@ dashboardPage(
       tags$style(HTML("hr {border-top: 1px solid #000000;}"))
     ),
     tabItems(
-      # First tab content
+      tabItem(tabName = "panel0",
+              fluidRow(
+                column(width=12,
+                       tags$iframe(src='https://shiny.rstudio.com/gallery/see-more.html',
+                                   width = '100%', height='950px')
+                )
+              )
+      ),
       tabItem(tabName = "panel1",
               fluidRow(
                 column(width=12,
@@ -40,7 +50,8 @@ dashboardPage(
       tabItem(tabName = "panel3",
               fluidRow(
                 column(width=12,
-                       includeMarkdown('markdown/server_components.md')
+                       includeMarkdown('markdown/server_components.md'),
+                       img(src='reactivity.png',height=500)
                 )
               )
       ),
@@ -101,6 +112,9 @@ dashboardPage(
                        hr()
                 )
               )
+      ),
+      tabItem(tabName = "panel8",
+              includeMarkdown('markdown/further_resources.md')
       )
       
     )

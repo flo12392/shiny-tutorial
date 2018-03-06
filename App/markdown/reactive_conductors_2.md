@@ -1,5 +1,5 @@
 
-Note that the operation `input$x * 2` is done in both outputs. It would make sense to put make this code a **reactive expression** by putting this code in a `reactive`. Any other reactive element that depends on this value will invalidate whenever the `reactive` changes value.
+Note that the operation `input$x * 2` is done in both outputs. It would make sense to make this code a **reactive expression** by putting this code in a `reactive`. Any other reactive element that depends on this value will invalidate whenever the `reactive` changes value.
 
 If we do that, the server looks as follows:
   

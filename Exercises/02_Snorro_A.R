@@ -51,7 +51,7 @@ server <- function(input,output)
     
     rasterImage(my_image, xleft, ybottom, xright, ytop)
     
-    grid()
+    grid(NA)
   })
   
 }
