@@ -1,5 +1,7 @@
-# Oh no! Freek has lost his moustache. run the app to see where it has end up.
-# We need to build an app that puts the moustache back in the correct place.
+# Oh no! Mark Rutte is trying to impress the chair of the House of Representatives by
+# staring her sensually in the eyes while stirring his coffee. However, we all know that 
+# he does not stand a chance without the appropriate facial hair.
+# We shall help him impress the lady by building an app that puts a moustache on his face.
 # For this to work, you require the png package first.
 
 library(shiny)
@@ -13,7 +15,7 @@ ui <- fluidPage(
            sliderInput('y','y:',min=-1,max=1,value=0,step=0.01)
     ),
     column(width=8,
-           plotOutput('myplot',width = 500,height=500)
+           plotOutput('myplot',width = 1000,height=720)
     )
   )
 )
@@ -24,7 +26,7 @@ server <- function(input,output)
   output$myplot <- renderPlot({
     
     # Add Freek to the plot.
-    my_image=readPNG("www/Freek.png")
+    my_image=readPNG("www/rutte.png")
     plot(1:2, type='n', main="", xlab="x", ylab="y")
     lim <- par()
     rasterImage(my_image, lim$usr[1], lim$usr[3], lim$usr[2], lim$usr[4])
