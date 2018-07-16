@@ -36,7 +36,7 @@ server <- function(input,output)
   })
   
   output$plot1 <- renderPlot({
-    plot(dat()[,1],dat()[,2])
+    plot(dat()[,1],dat()[,2]) # or simply: plot(dat())
   })
 }
 
