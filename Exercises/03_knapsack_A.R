@@ -1,11 +1,16 @@
-# A team of office employees decides that they do not like their office, called the fusionweg.
-# Therefore, they decide to secretly move a lot of the furniture to another office (moleculeweg)
-# overnight. However, they can not move everything in such a brief time period, so they decide
-# to move only the most valuable items. They model this as a knapsack problem; each item has a
-# weight and value, and they want to maximize the value of goods moved, within the capacity constraint.
+# Problem solving is difficult. Although; that's what people usually make you think. However, this does not 
+# always have to be the case. Take sorting for example; there is a large variety of sorting algorithms that 
+# vary in complexity and efficiency. Luckily there is bogosort; a sorting algorithm  that creates random 
+# permutations of its input until it finds a permutation that is sorted.Or, explained with an analogy: Bogosort 
+# is "to sort a deck of cards by throwing the deck into the air, picking the cards up at random, and repeating 
+# the process until the deck is sorted.".
 
-# Let's help them solve this with a very naive approach; We create a random solution when a button 
-# is clicked, and plot it's score.
+# We will implement a bogosort heuristic for the knapsack problem, although in this case we do not have an
+# easy way to verify that we have found the optimal solution; so we'll just have to find a solution we are happy with.
+# In the knapsack problem, we have a set of items with weights and values and a knapsack with limited capacity. 
+# We want to maximize the value of the objects we put in our knapsack. In the bogosort approach, we will just put 
+# random stuff in our knapsack until it's full, and then check the total value of the objects that are in our knapsack.
+# The algorithm stops when we find a solution that we are happy with, or when we are tired.
 
 # Note that the file '05_knapsack_helpers.R' has to either be in your working directory, or run this 
 # app by clicking the 'Run App' button in RStudio.

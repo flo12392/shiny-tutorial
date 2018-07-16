@@ -1,7 +1,9 @@
-# Now we have learned the basics of Shiny. We can create Artificial Intelligence.
-# In this case, we create a Advanced Zoologist Interaction Simulator (AZIS), 
-# To simulate the response of a Zoologist when it is greeted.
-# The AZIS should have two personality options; friendly or hostile.
+# It is even possible to create a complete chatbot in Shiny! We will illustrate 
+# in this exercise that it is possible to create a fully functioning chatbot
+# without all this Artificial Intelligence hocus-pocus that everyone is talking about.
+
+# To illustrate this, we will create a Pikachu chatbot. It's vocabulary exists 
+# out of two words; 'Pika' and 'Pikachu'. We will use our very own Pikachu named Mike.
 
 library(shiny)
 
@@ -11,7 +13,7 @@ ui <- fluidPage(
   textInput('greeting', 'Your greeting: '),
   actionButton('interact', 'Interact!'),
   hr(),
-  img(src='zoologist.jpg')
+  img(src='pikachu.png')
   
 )
 
@@ -21,11 +23,11 @@ server <- function(input,output)
   observeEvent(input$interact, 
                {
                  text1 = paste0(input$name,': ', input$greeting)
-                 text2 = paste0('AZIS: ', ifelse(input$mode=='Friendly','Hello!','I do not like your face.'))
+                 text2 = paste0('Mike: ', ifelse(input$mode=='Friendly','Pikachu.','Pika!'))
                  finaltext = HTML(paste0(text1,'<br>',text2))
                  
                  showModal(modalDialog(
-                   title = "Advanced Zoologist Interaction Simulator",
+                   title = "Pikachu Chatbot",
                    finaltext
                  ))               
                })
